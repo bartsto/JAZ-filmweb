@@ -1,0 +1,163 @@
+
+# ZAD 5 z bonusem
+
+
+## Dodawanie nowego filmu
+
+> POST http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie
+
+> {
+>  "title":"Siedem",
+>  "info":"Thriller",
+>  "productionDate":"12.04.1997"
+> }
+
+> {
+>  "title":"Transformers",
+>  "info":"Kino akcji",
+>  "productionDate":"10.06.2010"
+> }
+
+> {
+>  "title":"Iron Man 3",
+>  "info":"Film oparty na komiksie",
+>  "productionDate":"10.06.2015"
+> }
+
+> {
+>  "title":"Kevin sam w domu",
+>  "info":"Komedia, kino familijne",
+>  "productionDate":"24.10.1995"
+> }
+
+## Pobieranie wszystkich filmów
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie
+
+## Pobieranie wybranego filmu 
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/{id filmu}
+
+
+## Aktualizacja wybranego filmu, zmiana daty produkcji
+
+> PUT http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/5{id filmu}
+
+> {
+>  "title":"Transformers",
+>  "info":"Kino akcji",
+>  "productionDate":"21.04.2009"
+> }
+
+## Usunięcie wybranego filmu
+
+> DELETE http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/3
+
+## Dodanie oceny do filmu
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/1/rate/10
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/1/rate/5
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/1/rate/7
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/2/rate/8
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/movie/4/rate/6
+
+## Dodanie komentarza do filmu
+
+> POST http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/comment
+
+> {
+>  "movieId" : "1",
+>  "content":"Ciekawy film"
+> } 
+
+> {
+>  "movieId" : "1",
+>  "content":"Super efekty"
+> } 
+
+> {
+>  "movieId" : "2",
+>  "content":"Moze byc"
+> } 
+
+> {
+>  "movieId" : "4",
+>  "content":"Polecam!"
+> } 
+
+## Wyświetlenie komentarzy do danego filmu
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/comment/movie/1
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/comment/movie/2
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/comment/movie/4
+
+## Usunięcie komentarza
+
+> DELETE http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/comment/4 {id_filmu}
+
+# BONUS
+
+## Dodanie aktora
+
+> POST http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor
+
+> {
+>	"name":"Robert Downey Jr",
+>	"dateOfBirth":"4.04.1965"
+> }
+
+> {
+>	"name":"Brad Pitt",
+>	"dateOfBirth":"18.12.1963"
+> }
+
+> {
+>	"name":"Morgan Freeman",
+>	"dateOfBirth":"01.06.1937"
+> }
+
+> {
+>	"name":"Macaulay Culkin",
+>	"dateOfBirth":"26.08.1980"
+> }
+
+> {
+>	"name":"Samuel L. Jackson",
+>	"dateOfBirth":"21.12.1948"
+> }
+
+
+
+## Przydzielenie filmu danemu aktorowi
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/append/2/movie/1
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/append/3/movie/1
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/append/1/movie/3
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/append/5/movie/3
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/append/4/movie/4
+
+## Wyświetlenie aktorów danego filmu
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/movie/1
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/movie/2
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/movie/4
+
+## Wyświetlenie filmów danego aktora
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/1/movie
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/2/movie
+
+> GET http://localhost:8080/zad-filmlast-0.0.1-SNAPSHOT/api/actor/3/movie
